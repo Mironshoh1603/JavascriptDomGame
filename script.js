@@ -60,3 +60,21 @@ function holdFunc() {
 document.querySelector('.btn--hold').addEventListener('click', function () {
   holdFunc();
 });
+
+document.querySelector('.btn--new').addEventListener('click', function () {
+  document.querySelector('.player--0').style.backgroundColor = '#ffffff66';
+  document.querySelector('.player--1').style.backgroundColor = '#ffffff35';
+  let btnList = document.querySelectorAll('.btn');
+  for (let i = 0; i < btnList.length; i++) {
+    btnList[i].disabled = false;
+  }
+  let scoreList = document.querySelectorAll('.score');
+  for (let i = 0; i < scoreList.length; i++) {
+    scoreList[i].textContent = '0';
+  }
+  let currentList = document.querySelectorAll('.current-score');
+  for (let i = 0; i < currentList.length; i++) {
+    currentList[i].textContent = '0';
+  }
+  swapNum = 1;
+});
