@@ -62,8 +62,6 @@ document.querySelector('.btn--hold').addEventListener('click', function () {
 });
 
 document.querySelector('.btn--new').addEventListener('click', function () {
-  document.querySelector('.player--0').style.backgroundColor = '#ffffff66';
-  document.querySelector('.player--1').style.backgroundColor = '#ffffff35';
   let btnList = document.querySelectorAll('.btn');
   for (let i = 0; i < btnList.length; i++) {
     btnList[i].disabled = false;
@@ -76,5 +74,7 @@ document.querySelector('.btn--new').addEventListener('click', function () {
   for (let i = 0; i < currentList.length; i++) {
     currentList[i].textContent = '0';
   }
-  swapNum = 1;
+  document.querySelector('.dice').src = `dice-5.png`;
+  swapNum = 2;
+  holdFunc();
 });
