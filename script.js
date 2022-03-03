@@ -42,15 +42,12 @@ function holdFunc() {
   for (let i = 0; i < nodeList.length; i++) {
     nodeList[i].textContent = score;
   }
-  swapNum++;
 
   if (playerOneScore > 9) {
     document
-      .querySelector(`.player--${swapNum % 2}`)
-      .classList.add('backgreen');
-    document
       .querySelector(`.player--${(swapNum + 1) % 2}`)
-      .classList.add('backred');
+      .classList.add('backgreen');
+    document.querySelector(`.player--${swapNum % 2}`).classList.add('backred');
     let btnList = document.querySelectorAll('.btn');
     for (let i = 0; i < btnList.length; i++) {
       btnList[i].disabled = true;
@@ -76,7 +73,7 @@ function holdFunc() {
     document
       .querySelector(`.player--${(swapNum + 1) % 2}`)
       .classList.remove('player--active');
-    console.log(swapNum);
+    swapNum++;
   }
 }
 // Hold function finish
@@ -102,7 +99,7 @@ document.querySelector('.btn--new').addEventListener('click', function () {
     currentList[i].textContent = '0';
   }
   document.querySelector('.dice').src = `dice-5.png`;
-  swapNum = 1;
+  swapNum = 0;
   holdFunc();
 });
 // New button click finish
