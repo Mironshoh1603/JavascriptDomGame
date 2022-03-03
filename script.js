@@ -43,7 +43,7 @@ function holdFunc() {
     nodeList[i].textContent = score;
   }
 
-  if (playerOneScore > 9) {
+  if (playerOneScore > 99) {
     document
       .querySelector(`.player--${(swapNum + 1) % 2}`)
       .classList.add('backgreen');
